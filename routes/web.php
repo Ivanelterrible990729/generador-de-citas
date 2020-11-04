@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//crud de citas
+Route::get('/citas', function () {
+    return view('citas/citasIndex');
+});
