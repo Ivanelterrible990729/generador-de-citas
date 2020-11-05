@@ -18,7 +18,7 @@
         @foreach ($citas as $cita)
             <tr>
                 <td>
-                    <a href="{{ route('cita.show', [$cita]) }}">{{ $cita->id }}</a>
+                    <a href="{{ route('citas.show', [$cita]) }}">{{ $cita->id }}</a>
                 </td>
                 <td>{{ $cita->fecha }}</td>
                 <td>{{ $cita->estilista }}</td>

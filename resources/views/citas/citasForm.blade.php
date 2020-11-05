@@ -7,16 +7,6 @@
 <body>
     <h1>Datos de la cita</h1>
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
     @if(isset($cita))
         <form action="{{ route('citas.update', [$cita]) }}" method="POST">
         @method('patch')
@@ -25,7 +15,7 @@
     @endif
         @csrf
         <label for="fecha">Fecha:</label>
-        <input type="datetime_local" name="fecha" value="{{ old('fecha') ?? $cita->fecha ?? '' }}">
+        <input type="datetime-local" name="fecha" value="{{ old('fecha') ?? date('Y-m-d\TH:i:s', strtotime($cita->fecha)) ?? '' }}">
         <br>
 
         <label for="estilista">Estilista:</label>
@@ -42,5 +32,16 @@
 
         <button type="submit">Aceptar</button>
     </form>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
 </body>
 </html>

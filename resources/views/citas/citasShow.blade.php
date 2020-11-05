@@ -16,7 +16,7 @@
     </form>
 
     <hr>
-    <h1>Cita {{ $cita->id }}</h1>
+    <h1>Cita número: {{ $cita->id }}</h1>
     <ul>
         <li>Fecha: {{ $cita->fecha }}</li>
         <li>Estilista: {{ $cita->estilista }}</li>

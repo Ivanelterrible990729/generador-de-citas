@@ -18,9 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-//Route::get('/citas', [CitasController::class, 'index']);
-//Route::get('/citas/create', [CitasController::class, 'create']);
-//Route::get('/citas/{id}', [CitasController::class, 'show']);
+Route::get('/citas/reporte-pdf', [CitasController::class, 'reportePDF'])->name('reporte.pdf');
 Route::resource('citas', CitasController::class);
 
