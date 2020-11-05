@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CitasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//crud de citas
-Route::get('/citas', function () {
-    return view('citas/citasIndex');
-});
+
+//Route::get('/citas', [CitasController::class, 'index']);
+//Route::get('/citas/create', [CitasController::class, 'create']);
+//Route::get('/citas/{id}', [CitasController::class, 'show']);
+Route::resource('citas', CitasController::class);
+
