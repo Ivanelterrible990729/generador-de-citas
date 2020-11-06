@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Desarrollo Web</title>
-</head>
-<body>
-    <a href="{{ route('citas.create') }}">Crear cita</a>
+@extends('layouts.tabler')
+
+@section('content')
+
+    <h1> Listado de citas: </h1>
+    <a href="{{ route('citas.create') }}"> Crear cita </a>
     <hr>
-    <table border="1">
+    <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
         <tr>
             <th>ID</th>
             <th>Fecha</th>
@@ -27,5 +25,5 @@
             </tr>
         @endforeach
     </table>
-</body>
-</html>
+
+@endsection

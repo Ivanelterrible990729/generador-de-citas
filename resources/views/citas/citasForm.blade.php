@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Gestionador de Citas</title>
-</head>
-<body>
+@extends('layouts.tabler')
+
+@section('content')
+
     <h1>Datos de la cita</h1>
 
     @if(isset($cita))
@@ -34,6 +31,7 @@
     </form>
 
     @if ($errors->any())
+        <br>
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -43,5 +41,4 @@
         </div>
     @endif
 
-</body>
-</html>
+@endsection
