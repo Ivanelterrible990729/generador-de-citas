@@ -110,6 +110,9 @@ class CitasController extends Controller
     public function destroy($id)
     {
         //
+        $cita = Cita::find($id);
+        $cita->delete();
+        return redirect()->route('citas.index');
     }
 
     public function reportePDF()

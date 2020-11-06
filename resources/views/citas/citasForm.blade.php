@@ -15,7 +15,7 @@
     @endif
         @csrf
         <label for="fecha">Fecha:</label>
-        <input type="datetime-local" name="fecha" value="{{ old('fecha') ?? date('Y-m-d\TH:i:s', strtotime($cita->fecha)) ?? '' }}">
+        <input type="datetime-local" name="fecha" value="{{ old('fecha') ?? date('Y-m-d\TH:i:s', strtotime($cita->fecha ?? '')) ?? '' }}">
         <br>
 
         <label for="estilista">Estilista:</label>
